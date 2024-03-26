@@ -1,6 +1,6 @@
 import React,{useReducer,useEffect} from 'react'
-import axios from 'axios'
-const Fetch = () => {
+import './Products.css'
+const Products = () => {
     const initailState={
         loading:true,
         error:'',
@@ -45,7 +45,7 @@ const Fetch = () => {
             let data=await res.json();
             dispatch({type:"FETCH_SUCCESS",payload:data.products})
            }catch(e){
-            console.log(e.error);
+            dispatch({type:"FETCH_ERROR"})
 
            }
 
@@ -56,11 +56,11 @@ const Fetch = () => {
  
     <div>
         {state.loading? 'Loading':state.allProducts.map((item)=>{
-            return <h1 key={item.id}>{item.title}</h1>
+            return <div  id="box" key={item.id} >{item.title}</div>
         })}
         {state.error?error:null}
     </div>
   )
 }
 
-export default Fetch
+export default Products
