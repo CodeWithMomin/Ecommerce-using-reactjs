@@ -1,0 +1,19 @@
+/* addtobutton.css */
+
+.button {
+    background-color: #007bff; /* Blue background color */
+    color: white; /* Text color */
+    width: 260px;
+    height: 30px;
+    margin-inline: 60px; /* Padding */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition on hover */
+    margin-bottom: 10px;
+}
+  
+  .button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  

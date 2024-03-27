@@ -1,5 +1,6 @@
 import React,{useReducer,useEffect} from 'react'
 import './Products.css'
+import AddToCart from './AddToCart'
 const Products = () => {
     const initailState={
         loading:true,
@@ -54,9 +55,20 @@ const Products = () => {
     },[])
   return (
  
-    <div>
+    <div id='container'>
         {state.loading? 'Loading':state.allProducts.map((item)=>{
-            return <div  id="box" key={item.id} >{item.title}</div>
+            return <div  id="box" key={item.id} >
+                <div className="box1"><img id='img' src={item.thumbnail} alt="" width="260px" height="200px"  margin="10px"/></div>
+                <div className="box2">
+                    <p className='title'>{item.title}</p>
+                    <p className='des'>{item.description}</p>
+                    <span>${item.price} </span>  &nbsp; &nbsp; <span style={{color:"red"}}>rating:{item.rating}</span>
+
+                </div>
+               <AddToCart/>
+                
+
+            </div>
         })}
         {state.error?error:null}
     </div>
