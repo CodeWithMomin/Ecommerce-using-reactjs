@@ -58,8 +58,9 @@ const userId = generateCustomId();
 
   return (
     <div className="reg-container">
-      <h1>Register Here</h1>
+      
       <form className="reg-form" name="regForm">
+      <h1>Register Here</h1>
         <input
           type="text"
           placeholder="Enter Name"
